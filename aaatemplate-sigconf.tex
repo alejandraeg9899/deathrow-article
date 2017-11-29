@@ -29,7 +29,7 @@
 
 % Title. 
 % If your title is long, consider \title[short title]{full title} - "short title" will be used for running heads.
-\title{Death Row Information in Texas Department of Criminal Justice \\ Reglas de Asociación aplicada al listado del Departamento de Justicia de Texas}
+\title{Death Row Information in Texas Department of Criminal Justice \\ Reglas de Asociación aplicada a crimenes}
 % Authors.
 \author{Karen Jaqueline Reyes Flores}
 \affiliation{%
@@ -47,7 +47,7 @@
 \renewcommand{\abstractname}{Resumen}
 % abstract
 \begin{abstract}
-En el estado de Texas el registro de armas de fuego no es requerido, aunque para la portabilidad de una, por ley se requiere una identificación emitida por el estado, esto se aplica a todos los compradores. La falta del registro de armas de fuego en el estado dificulta informar con exactitud cuántas personas poseen una. Existen 4,900 comerciantes de armas en Texas registrados.
+En el estado de Texas el registro de armas de fuego no es requerido, aunque para la portabilidad de una, por ley se requiere una identificación emitida por el estado, esto se aplica a todos los compradores. La falta del registro de armas de fuego en el estado dificulta informar con exactitud cuántas personas poseen una. Existen 4,900 comerciantes de armas en Texas registrados ~\cite{infoArmas}.
 
 En pleno siglo XXI existen prejuicios respecto a los delincuentes, juzgando a estos por la raza, el nivel académico logrado y los lugares de origen.
 
@@ -250,8 +250,10 @@ El resultado del análisis fue congruente con lo que observamos en la figura \re
       (prepa) &      (Male) &  0.558943 &    0.989091 &  0.995159 \\
 \bottomrule
 \end{tabular}
+\begin{center}
 \caption{Atributos frecuentes e independientes junto con su nivel de soporte}
 \label{tab:resultado}
+\end{center}
 \end{table}
 
 
@@ -272,16 +274,23 @@ El \textbf{lift} expresa cuál es la proporción del soporte observado de un con
 Un valor de lift = 1 indica que ese conjunto aparece una cantidad de veces acorde a lo esperado bajo condiciones de independencia.\\
 Nuestros resultados fueron con a lo más lift de 1, nivel de confianza mayor o igual a 0.5 y soporte mayor a 0.15:\\ Estos datos nos dicen que nuestras reglas mostraron asociaciones de atributos independientes, en el cual aparecian en un $50\%$ juntas como regla, todo lo mencionado se muestra en el cuadro 4.
 
-
-
 \section{Conclusiones}
 A contrario de lo que se piensa comúnmente en los estados unidos, las reglas de asociación nos demostraron que es más común que los criminales que fueron asesinados mediante la pena de muerte, son personas de raza blanca con un $44\%$ en nivel de soporte en contradicción de la raza negra con un $38\%$ de soporte. Y respecto al grado de escolaridad, los criminales con mayor nivel de soporte fueron los que estudiaron la preparatoria (9-12 años) con un nivel de $55\%$ y los que estudiaron la secundaria fue de $33\%$.\\ Creemos que sería de gran ayuda este análisis de patrones o reglas frecuentes para localizar ciertos focos rojos en los tutelares para menores de Texas e intentar prevenir más penas de muerte en este estado, y reducir la cantidad de crímenes que en estos últimos años ha ido en incremento en dicha zona.\\
 
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=3.5in]{enes.png}
+\end{figure}
 
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=3.0in]{C.PNG}
+\end{figure}
 
 
 \bibliography{aaatemplate}{}
 \bibliographystyle{ACM-Reference-Format}
 
- 
+
+
 \end{document}
