@@ -53,7 +53,7 @@ El objetivo de este proyecto fue realizar un análisis certero y que de contradi
 \end{abstract}
 
 %keywords
-\keywords{Algoritmo A priori, Minería de Datos, Matriz, Discretización}
+\keywords{Algoritmo A priori, Minería de Datos, Reglas de Asociación, Discretización}
 
 % A "teaser" figure, centered below the title and authors and above the body of the work.
 \begin{teaserfigure}
@@ -163,12 +163,14 @@ El DataSet contaba con 492 registros, 2 atributos continuos (Edad y Escolaridad)
   \centering
   \includegraphics[width=2.5in]{Rplot.png}
   \caption{Histograma que muestra el rango de edades.}
+  \label{fig:rangoEdad}
 \end{figure}
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=2.5in]{escolaridad.jpg}
   \caption{Histograma que muestra el rango del nivel de  escolaridad.}
+  \label{fig:rangoEscolaridad}
 \end{figure}
 
 
@@ -185,25 +187,36 @@ educationLevel &   nativeCounty &        Age &      Race &   County \\
         prepa &  Harris County &  cincuenta &     White &  Tarrant \\
 \bottomrule
 \end{tabular}
+\label{categorias}
 \caption{Dataset resultante de eliminación de atributos continuos por discretos.}
 \end{center}
 \end{table}
 
-\subsection{Apriori} 
+\subsection{A priori} 
 El algoritmo a priori~\cite{Raschka-rules} es un algoritmo utilizado en minería de datos, sobre bases de datos transaccionales, que permite encontrar de forma eficiente ``conjuntos de ítems frecuentes", los cuales sirven de base para generar reglas de asociación.
+
+El algoritmo a priori recibe una matriz binaria y regresa los patrones frecuentes.
 
 
 \section{Resultados}
-El resultado del analisis fue congruente con lo que observamos en la $Figura$ $4$ y $5$
+El resultado del análisis fue congruente con lo que observamos en la \ref{fig:rangoEdad} y la \ref{fig:rangoEscolaridad} en donde si ordenamos por nivel de confianza y lift, lo que arroja la regla de asociación nos dicen que lo más frecuente es que el criminal tenga 30 años al momento del crimen y su grado de escolaridad sea secundaria que corresponde a un rango de entre [7.. 9 años], la segunda regla nos dice que tiene la escolaridad antes mencionada y es un hombre blanco, la tercera es que tenga la misma edad antes mencionada y sea de Harris, Texas.
+
 ¿qué encontraron? Sobre todo ¿cómo interpretan esos resultados? ¿qué significan en este contexto?  En esta parte espero además que incluyan una evaluación de los resultados obtenidos (ROC, o índices en el caso de clustering, o medidas como LIFT en caso de patrones frecuentes).  Si consideran que puede servir, incluyan gráficas o tablas con resultados relevantes. 
 
-\section{Hallazgos y Conclusiones}
-A contrario de lo que se piensa comúnmente en los estados unidos, las reglas de asociación nos demostraron que es más común que los criminales que fueron asesinados mediante la pena de muerte, son personas de raza blanca con un $44\%$ en nivel de soporte en contradicción de la raza negra con un $38\%$ de soporte. Y respecto al grado de escolaridad, los criminales con mayor nivel de soporte fueron los que estudiaron la preparatoria (9-12 años) con un nivel de $55\%$ y los que estudiaron la secundaria fue de $33\%$.\\ Creemos que sería de gran ayuda este análisis de patrones o reglas frecuentes para localizar ciertos focos rojos en los tutelares para menores de Texas e intentar prevenir más penas de muerte en este estado, y reducir la cantidad de crímenes que en estos últimos años ha ido en incremento en dicha zona.
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=3.5in]{independientes.PNG}
-  \caption{Datos con un solo antecedente nos muestran cifras de Soporte para cada Atributo}
-\end{figure}
+\section{Conclusiones}
+A contrario de lo que se piensa comúnmente en los estados unidos, las reglas de asociación nos demostraron que es más común que los criminales que fueron asesinados mediante la pena de muerte, son personas de raza blanca con un $44\%$ en nivel de soporte en contradicción de la raza negra con un $38\%$ de soporte. Y respecto al grado de escolaridad, los criminales con mayor nivel de soporte fueron los que estudiaron la preparatoria (9-12 años) con un nivel de $55\%$ y los que estudiaron la secundaria fue de $33\%$.\\ Creemos que sería de gran ayuda este análisis de patrones o reglas frecuentes para localizar ciertos focos rojos en los tutelares para menores de Texas e intentar prevenir más penas de muerte en este estado, y reducir la cantidad de crímenes que en estos últimos años ha ido en incremento en dicha zona.\\
+\begin{tabular}{lllrrrr}
+\toprule
+  antecedants & consequents &   support &  confidence &      lift \\
+\midrule
+  (secundaria) &      (Male) &  0.337398 &    1.000000 &  1.006135 \\
+     (treinta) &      (Male) &  0.453252 &    0.995516 &  1.001623  \\
+       (White) &      (Male) &  0.441057 &    0.995392 &  1.001498 \\
+     (Black) &      (Male) &  0.384146 &    0.989418 &  0.995488  \\
+      (prepa) &      (Male) &  0.558943 &    0.989091 &  0.995159 \\
+\bottomrule
+\end{tabular}
+
 
 \bibliography{aaatemplate}{}
 \bibliographystyle{ACM-Reference-Format}
