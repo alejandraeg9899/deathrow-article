@@ -211,6 +211,7 @@ El algoritmo a priori recibe una matriz binaria y regresa los patrones frecuente
 El resultado del análisis fue congruente con lo que observamos en la figura \ref{fig:rangoEdad} y la figura \ref{fig:rangoEscolaridad} en donde si ordenamos por nivel de confianza y lift, lo que arroja la regla de asociación nos dicen que lo más frecuente es que el criminal tenga 30 años al momento del crimen y su grado de escolaridad sea secundaria que corresponde a un rango de entre [7.. 9 años], la segunda regla nos dice que tiene la escolaridad antes mencionada y es un hombre blanco, la tercera es que tenga la misma edad antes mencionada y sea de Harris, Texas.
 
 \begin{table}[ht]
+\begin{center}
 \scalebox{0.8}{
 \begin{tabular}{lllrrrr}
 \toprule
@@ -234,6 +235,7 @@ El resultado del análisis fue congruente con lo que observamos en la figura \re
 \end{tabular}}
 \caption{Resultado de Reglas de Asociación ordenados de forma Descendente por Lift y Confianza}
 \label{tab:resultado}
+\end{center}
 \end{table}
 
 \begin{table}[ht]
@@ -265,7 +267,7 @@ La \textbf{confianza} de una regla puede interpretarse como un estimador de ${\d
 \end{equation}
 El \textbf{lift} expresa cuál es la proporción del soporte observado de un conjunto de productos respecto del soporte teórico de ese conjunto dado el supuesto de independencia. 
 \begin{equation} \label{eq:solve3}
- \operatorname{lift}(A \Rightarrow B) = \frac{P(B\mid A)}{P(B)} = \frac{P(A\and B)}{P(A)P(B)}
+ \operatorname{lift}(A \Rightarrow B) = \frac{P(B\mid A)}{P(B)} = \frac{P(A\cap B)}{P(A)P(B)}
 \end{equation}
 Un valor de lift = 1 indica que ese conjunto aparece una cantidad de veces acorde a lo esperado bajo condiciones de independencia.\\
 Nuestros resultados fueron con a lo más lift de 1, nivel de confianza mayor o igual a 0.5 y soporte mayor a 0.15:\\ Estos datos nos dicen que nuestras reglas mostraron asociaciones de atributos independientes, en el cual aparecian en un $50\%$ juntas como regla, todo lo mencionado se muestra en el cuadro 4.
