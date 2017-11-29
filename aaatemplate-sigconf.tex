@@ -158,32 +158,40 @@ Aquellos registros cuya información no quedó completa fueron marcados como NA,
 
 El DataSet contaba con 492 registros, 2 atributos continuos (Edad y Escolaridad) y 4 categóricos (Género, Condado Nativo, Raza ,Condado donde se cometió el delito). Para aplicar el algoritmo Apriori de esta investigación (se describe a continuación) se requería que el Nivel de Escolaridad fuera una variable categórica tomando los valores de Primaria en el rango de [3.. 6], Secundaria en el rango de  [7.. 9], Prepa en el rango de  [10.. 12] y Licenciatura en el rango de  [13.. 20] también la Edad se requiere que sea una variable categórica tomando valores de Veinte en el rango de [20.. 30], Treinta en el rango de [31.. 40], Cuarenta en el rango de [41.. 50], Cincuenta en el rango de [51.. 60], Sesenta en el rango de [61.. 70].
 
-\begin{table}[!hbt]
-\begin{center}
-\begin{tabular}{llllll}
-\toprule
-{} & educationLevel &   nativeCounty &        Age &      Race &   County \\
-\midrule
-0 &          prepa &     Guanajuato &  cincuenta &  Hispanic &  Hidalgo \\
-1 &     secundaria &         Harris &   cuarenta &     White &      Bee \\
-2 &          prepa &          Bexar &   cuarenta &     Black &    Bexar \\
-3 &          prepa &         Dallas &   cuarenta &     Black &   Dallas \\
-4 &          prepa &  Harris County &  cincuenta &     White &  Tarrant \\
-\bottomrule
-\end{tabular}
-\end{center}
-\end{table}
-
-\subsection{Apriori}
-El algoritmo a priori es un algoritmo utilizado en minería de datos, sobre bases de datos transaccionales, que permite encontrar de forma eficiente "conjuntos de ítems frecuentes", los cuales sirven de base para generar reglas de asociación.
-
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=2.5in]{Rplot.png}
-  \includegraphics[width=2.5in]{escolaridad.jpg}
-  \caption{Gráficas realizadas en R que muestran las columnas de escolaridad y de edad de la base de datos.}
+  \caption{Histograma que muestra el rango de edades.}
 \end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=2.5in]{escolaridad.jpg}
+  \caption{Histograma que muestra el rango del nivel de  escolaridad.}
+\end{figure}
+
+
+\begin{table}[!hbt]
+\begin{center}
+\begin{tabular}{llllll}
+\toprule
+educationLevel &   nativeCounty &        Age &      Race &   County \\
+\midrule
+         prepa &     Guanajuato &  cincuenta &  Hispanic &  Hidalgo \\
+     secundaria &         Harris &   cuarenta &     White &      Bee \\
+         prepa &          Bexar &   cuarenta &     Black &    Bexar \\
+         prepa &         Dallas &   cuarenta &     Black &   Dallas \\
+        prepa &  Harris County &  cincuenta &     White &  Tarrant \\
+\bottomrule
+\end{tabular}
+\caption{Dataset resultante de eliminación de atributos continuos por discretos.}
+\end{center}
+\end{table}
+
+\subsection{Apriori}
+El algoritmo a priori es un algoritmo utilizado en minería de datos, sobre bases de datos transaccionales, que permite encontrar de forma eficiente ``conjuntos de ítems frecuentes", los cuales sirven de base para generar reglas de asociación.
+
 
 
 \section{Resultados}
