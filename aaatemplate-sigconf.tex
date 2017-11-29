@@ -92,7 +92,7 @@ El algoritmo Apriori extrae un conjunto de reglas de los datos y destaca aquella
 \end{figure}
 
 \section{DataSet}
-Del Departamento de Justicia de Texas se obtuvo un listado de las ejecuciones que se realizaron desde el 7 de Diciembre de 1982 hasta 9 de Noviembre del 2017 en el cual se incluyen las atributos descritos a continuación:
+Del Departamento de Justicia de Texas ~\cite{DeathRow} se obtuvo un listado de las ejecuciones que se realizaron desde el 7 de Diciembre de 1982 hasta 9 de Noviembre del 2017 en el cual se incluyen las atributos descritos a continuación:
 
 \begin{table}[ht]
 \centering
@@ -189,9 +189,8 @@ educationLevel &   nativeCounty &        Age &      Race &   County \\
 \end{center}
 \end{table}
 
-\subsection{Apriori}
+\subsection{Apriori} ~\cite{Raschka-rules}
 El algoritmo a priori es un algoritmo utilizado en minería de datos, sobre bases de datos transaccionales, que permite encontrar de forma eficiente ``conjuntos de ítems frecuentes", los cuales sirven de base para generar reglas de asociación.
-
 
 
 \section{Resultados}
@@ -201,12 +200,12 @@ El algoritmo a priori es un algoritmo utilizado en minería de datos, sobre base
 A contrario de lo que se piensa comúnmente en los estados unidos, las reglas de asociación nos demostraron que es más común que los criminales que fueron asesinados mediante la pena de muerte, son personas de raza blanca con un $44\%$ en nivel de soporte en contradicción de la raza negra con un $38\%$ de soporte. Y respecto al grado de escolaridad, los criminales con mayor nivel de soporte fueron los que estudiaron la preparatoria (9-12 años) con un nivel de $55\%$ y los que estudiaron la secundaria fue de $33\%$.\\ Creemos que sería de gran ayuda este análisis de patrones o reglas frecuentes para localizar ciertos focos rojos en los tutelares para menores de Texas e intentar prevenir más penas de muerte en este estado, y reducir la cantidad de crímenes que en estos últimos años ha ido en incremento en dicha zona.
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=2.5in]{Rplot.png}
-  \caption{Histograma que muestra el rango de edades.}
+  \includegraphics[width=3.5in]{independientes.PNG}
+  \caption{Datos con un solo antecedente nos muestran cifras de Soporte para cada Atributo}
 \end{figure}
 
 
 \section{Bibliografia:}
-
+\bibliographystyle{ACM-Reference-Format}
  
 \end{document}
