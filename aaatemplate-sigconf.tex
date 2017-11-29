@@ -254,11 +254,14 @@ El resultado del análisis fue congruente con lo que observamos en la figura \re
 
 
 \subsection{Evaluación de Resultados}
-Para determinar que una regla es significativa se requiere de varias medidas como el soporte, la confianza y el lift:\\
-El 'soporte' de un conjunto de items se define como la proporción de transacciones en la base de datos que contiene dicho conjunto de items:\\
-$Soporte(X)=\frac{|X|}{|D|}$\\
+Para determinar que una regla es significativa se requiere de varias medidas como \textbf{el soporte, la confianza y el lift:}\\
+El 'soporte' de un conjunto de items se define como la proporción de transacciones en la base de datos que contiene dicho conjunto de items:
+\begin{equation} \label{eq:solve}
+Soporte(X)=\frac{|X|}{|D|}
+\end{equation}
 La 'confianza' de una regla puede interpretarse como un estimador de ${\displaystyle P(Y|X)} {\displaystyle P(Y|X)}$, la probabilidad de encontrar la parte derecha de una regla condicionada a que se encuentre también la parte izquierda.:\\
-${\displaystyle \mathrm {conf} (X\Rightarrow Y)={\frac {\mathrm {sop} (X\cup Y)}{\mathrm {sop} (X)}}={\frac {\left|X\cup Y\right\vert }{\left|X\right\vert }}}$
+${\displaystyle \mathrm {conf} (X\Rightarrow Y)={\frac {\mathrm {sop} (X\cup Y)}{\mathrm {sop} (X)}}={\frac {\left|X\cup Y\right\vert }{\left|X\right\vert }}}$\\
+El 'lift' expresa cuál es la proporción del soporte observado de un conjunto de productos respecto del soporte teórico de ese conjunto dado el supuesto de independencia. 
 
 
 
