@@ -255,20 +255,20 @@ El resultado del análisis fue congruente con lo que observamos en la figura \re
 
 \subsection{Evaluación de Resultados}
 Para determinar que una regla es significativa se requiere de varias medidas como \textbf{el soporte, la confianza y el lift:}\\
-El 'soporte' de un conjunto de items se define como la proporción de transacciones en la base de datos que contiene dicho conjunto de items:
-\begin{equation} \label{eq:solve}
+El \textbf{soporte} de un conjunto de items se define como la proporción de transacciones en la base de datos que contiene dicho conjunto de items:
+\begin{equation} \label{eq:solve1}
 Soporte(X)=\frac{|X|}{|D|}
 \end{equation}
-La 'confianza' de una regla puede interpretarse como un estimador de ${\displaystyle P(Y|X)} {\displaystyle P(Y|X)}$, la probabilidad de encontrar la parte derecha de una regla condicionada a que se encuentre también la parte izquierda.:
-\begin{equation} \label{eq:solve}
+La \textbf{confianza} de una regla puede interpretarse como un estimador de ${\displaystyle P(Y|X)} {\displaystyle P(Y|X)}$, la probabilidad de encontrar la parte derecha de una regla condicionada a que se encuentre también la parte izquierda.:
+\begin{equation} \label{eq:solve2}
 {\displaystyle \mathrm {conf} (X\Rightarrow Y)={\frac {\mathrm {sop} (X\cup Y)}{\mathrm {sop} (X)}}={\frac {\left|X\cup Y\right\vert }{\left|X\right\vert }}}
 \end{equation}
-El 'lift' expresa cuál es la proporción del soporte observado de un conjunto de productos respecto del soporte teórico de ese conjunto dado el supuesto de independencia. 
-\begin{equation} \label{eq:solve}
+El \textbf{lift} expresa cuál es la proporción del soporte observado de un conjunto de productos respecto del soporte teórico de ese conjunto dado el supuesto de independencia. 
+\begin{equation} \label{eq:solve3}
  \operatorname{lift}(A \Rightarrow B) = \frac{P(B\mid A)}{P(B)} = \frac{P(A\and B)}{P(A)P(B)}
 \end{equation}
 Un valor de lift = 1 indica que ese conjunto aparece una cantidad de veces acorde a lo esperado bajo condiciones de independencia.\\
-Nuestros resultados fueron con a lo más lift de 1,nivel de confianza mayor o igual a 0.5 y soporte mayor a 
+Nuestros resultados fueron con a lo más lift de 1, nivel de confianza mayor o igual a 0.5 y soporte mayor a 0.15:\\ Estos datos nos dicen que nuestras reglas mostraron asociaciones de atributos independientes, en el cual aparecian en un $50\%$ juntas como regla y que
 
 
 
