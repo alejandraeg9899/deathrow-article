@@ -5,6 +5,7 @@
 \usepackage[spanish]{babel}
 \usepackage{multirow}
 \usepackage{blindtext}
+\usepackage{graphicx}
 % The next six lines come directly from the completed rights form.
 % You MUST replace them with the lines specific to your accepted work.
 \copyrightyear{2017}
@@ -51,11 +52,8 @@ En el estado de Texas el registro de armas de fuego no es requerido, aunque para
 En pleno siglo XXI existen prejuicios respecto a los delincuentes, juzgando a estos por la raza, el nivel académico logrado y los lugares de origen.
 
 El objetivo en el presente trabajo es realizar un análisis en el cual se tratará de encontrar cierto patrón que nos lleve a determinar que no es necesario ser de tal o cual raza para cometer un delito, mostrando que los prejuicios no están del todo bien.
-La idea principal a trabajar es llevar a cabo una tarea de aprendizaje denominada Reglas de Asociación, esto con la finalidad de saber cómo es que con los datos que se obtuvieron sobre una base de datos criminal del estado de Texas están relacionados y encontrar 
-
-
-
-El objetivo de este proyecto fue realizar un análisis certero y que de contradicciones a estos prejuicios sociales respecto a los criminales. Como idea principal realizamos la tarea de aprendizaje no supervisado denominada Reglas de asociación, para encontrar cuales son los casos más comunes que ocurran en dichos crímenes, dada la base de datos que analizamos donde la mayoría de los crímenes son asesinatos y por consecuencia fueron sentenciados a la pena de muerte, se desea hacer la asociación con los otros parámetros y no solo con el crimen. \\Por ejemplo: Deseábamos ver si el grado de escolaridad, la raza y el lugar de origen influyen en este tipo de crímenes en específico.
+La idea principal a trabajar es llevar a cabo una tarea de aprendizaje denominada Reglas de Asociación, esto con la finalidad de saber cómo es que con los datos que se obtuvieron sobre una base de datos criminal del estado de Texas están relacionados.
+\\Por ejemplo: Deseábamos saber si el grado de escolaridad, la raza y el lugar de origen influyen en los crimenes.
 
 \end{abstract}
 
@@ -210,32 +208,33 @@ El algoritmo a priori recibe una matriz binaria y regresa los patrones frecuente
 El resultado del análisis fue congruente con lo que observamos en la figura \ref{fig:rangoEdad} y la figura \ref{fig:rangoEscolaridad} en donde si ordenamos por nivel de confianza y lift, lo que arroja la regla de asociación nos dicen que lo más frecuente es que el criminal tenga 30 años al momento del crimen y su grado de escolaridad sea secundaria que corresponde a un rango de entre [7.. 9 años], la segunda regla nos dice que tiene la escolaridad antes mencionada y es un hombre blanco, la tercera es que tenga la misma edad antes mencionada y sea de Harris, Texas.
 
 \begin{table}[bt]
+\scalebox{0.8}{
 \begin{tabular}{lllrrrr}
 \toprule
-{} &              antecedants & consequents &   support &  confidence &  lift\\
+              antecedants & consequents &   support &  confidence &  lift\\
 \midrule
-2  &    (treinta, secundaria) &      (Male) &  0.168699 &    1.000000 &  1.00613\\
-6  &      (White, secundaria) &      (Male) &  0.144309 &    1.000000 &  1.00613 \\
-9  &        (treinta, Harris) &      (Male) &  0.130081 &    1.000000 &  1.00613 \\
-11 &        (White, cuarenta) &      (Male) &  0.140244 &    1.000000 &  1.00613 \\
-12 &         (treinta, White) &      (Male) &  0.182927 &    1.000000 &  1.00613 \\
-13 &      (secundaria, Black) &      (Male) &  0.117886 &    1.000000 &  1.00613 \\
-20 &          (Harris, Black) &      (Male) &  0.142276 &    1.000000 &  1.00613\\
-24 &        (cuarenta, prepa) &      (Male) &  0.156504 &    1.000000 &  1.00613 \\
-1  &         (treinta, prepa) &      (Male) &  0.247967 &    0.991803 &  0.99788 \\
-18 &           (White, prepa) &      (Male) &  0.225610 &    0.990991 &  0.99707 \\
-5  &         (treinta, Black) &      (Male) &  0.186992 &    0.989130 &  0.99519 \\
-14 &          (Harris, prepa) &      (Male) &  0.146341 &    0.986111 &  0.99216 \\
-17 &           (Black, prepa) &      (Male) &  0.247967 &    0.983607 &  0.98964 \\
-0  &  (treinta, Black, prepa) &      (Male) &  0.119919 &    0.983051 &  0.98908 \\
+    (treinta, secundaria) &      (Male) &  0.168699 &    1.000000 &  1.00613\\
+     (White, secundaria) &      (Male) &  0.144309 &    1.000000 &  1.00613 \\
+       (treinta, Harris) &      (Male) &  0.130081 &    1.000000 &  1.00613 \\
+       (White, cuarenta) &      (Male) &  0.140244 &    1.000000 &  1.00613 \\
+        (treinta, White) &      (Male) &  0.182927 &    1.000000 &  1.00613 \\
+      (secundaria, Black) &      (Male) &  0.117886 &    1.000000 &  1.00613 \\
+         (Harris, Black) &      (Male) &  0.142276 &    1.000000 &  1.00613\\
+        (cuarenta, prepa) &      (Male) &  0.156504 &    1.000000 &  1.00613 \\
+         (treinta, prepa) &      (Male) &  0.247967 &    0.991803 &  0.99788 \\
+          (White, prepa) &      (Male) &  0.225610 &    0.990991 &  0.99707 \\
+         (treinta, Black) &      (Male) &  0.186992 &    0.989130 &  0.99519 \\
+          (Harris, prepa) &      (Male) &  0.146341 &    0.986111 &  0.99216 \\
+          (Black, prepa) &      (Male) &  0.247967 &    0.983607 &  0.98964 \\
+  (treinta, Black, prepa) &      (Male) &  0.119919 &    0.983051 &  0.98908 \\
 \bottomrule
 \end{tabular}
+\caption{Como se llama esta tabla}
+\label{}
+}
 \end{table}
 
-¿qué encontraron? Sobre todo ¿cómo interpretan esos resultados? ¿qué significan en este contexto?  En esta parte espero además que incluyan una evaluación de los resultados obtenidos (ROC, o índices en el caso de clustering, o medidas como LIFT en caso de patrones frecuentes).  Si consideran que puede servir, incluyan gráficas o tablas con resultados relevantes. 
-
-\section{Conclusiones}
-A contrario de lo que se piensa comúnmente en los estados unidos, las reglas de asociación nos demostraron que es más común que los criminales que fueron asesinados mediante la pena de muerte, son personas de raza blanca con un $44\%$ en nivel de soporte en contradicción de la raza negra con un $38\%$ de soporte. Y respecto al grado de escolaridad, los criminales con mayor nivel de soporte fueron los que estudiaron la preparatoria (9-12 años) con un nivel de $55\%$ y los que estudiaron la secundaria fue de $33\%$.\\ Creemos que sería de gran ayuda este análisis de patrones o reglas frecuentes para localizar ciertos focos rojos en los tutelares para menores de Texas e intentar prevenir más penas de muerte en este estado, y reducir la cantidad de crímenes que en estos últimos años ha ido en incremento en dicha zona.\\
+\begin{table}[bt]
 \begin{tabular}{lllrrrr}
 \toprule
   antecedants & consequents &   support &  confidence &      lift \\
@@ -247,6 +246,13 @@ A contrario de lo que se piensa comúnmente en los estados unidos, las reglas de
       (prepa) &      (Male) &  0.558943 &    0.989091 &  0.995159 \\
 \bottomrule
 \end{tabular}
+\end{table}
+\subsection{Evaluación de Resultados}
+Para determinar que una regla es significativa se requiere 
+
+\section{Conclusiones}
+A contrario de lo que se piensa comúnmente en los estados unidos, las reglas de asociación nos demostraron que es más común que los criminales que fueron asesinados mediante la pena de muerte, son personas de raza blanca con un $44\%$ en nivel de soporte en contradicción de la raza negra con un $38\%$ de soporte. Y respecto al grado de escolaridad, los criminales con mayor nivel de soporte fueron los que estudiaron la preparatoria (9-12 años) con un nivel de $55\%$ y los que estudiaron la secundaria fue de $33\%$.\\ Creemos que sería de gran ayuda este análisis de patrones o reglas frecuentes para localizar ciertos focos rojos en los tutelares para menores de Texas e intentar prevenir más penas de muerte en este estado, y reducir la cantidad de crímenes que en estos últimos años ha ido en incremento en dicha zona.\\
+
 
 
 
